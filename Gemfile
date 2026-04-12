@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 group :jekyll_plugins do
     gem 'jekyll'
+    gem 'liquid', '4.0.4'
     gem 'jekyll-archives'
     gem 'jekyll-diagrams'
     gem 'jekyll-email-protect'
@@ -13,7 +14,6 @@ group :jekyll_plugins do
     gem 'jekyll-target-blank'
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
-    gem 'mini_racer'
     gem 'unicode_utils'
     gem 'webrick'
 end
