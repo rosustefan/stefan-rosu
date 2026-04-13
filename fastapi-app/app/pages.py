@@ -19,4 +19,5 @@ def load_page(slug: str) -> Page | None:
         title=resolve_title(document, resolved_slug),
         slug=resolved_slug,
         html=render_markdown(document.content),
+        subtitle=document.get("subtitle", ""),
     )

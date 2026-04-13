@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from app.errors import register_error_handlers
+from app.news import list_active_news
 from app.pages import load_page
 from app.posts import list_posts, load_post
 from app.projects import list_projects, load_project
@@ -13,15 +14,24 @@ app = FastAPI(title=settings.app_name, debug=settings.debug)
 app.mount("/static", StaticFiles(directory=settings.static_dir), name="static")
 
 templates = Jinja2Templates(directory=str(settings.templates_dir))
+templates.env.globals["settings"] = settings
 register_error_handlers(app, templates)
 
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request) -> HTMLResponse:
+    page = load_page("about")
+    if page is None:
+        raise HTTPException(status_code=404, detail="Page not found")
+
     return templates.TemplateResponse(
         request=request,
-        name="index.html",
-        context={"title": "Home"},
+        name="page.html",
+        context={
+            "title": page.title,
+            "page": page,
+            "recent_news": list_active_news()[: settings.homepage_news_limit],
+        },
     )
 
 

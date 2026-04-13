@@ -2,14 +2,16 @@ def test_home_page_renders(client):
     response = client.get("/")
 
     assert response.status_code == 200
-    assert "FastAPI migration" in response.text
+    assert "Recent News" in response.text
+    assert "Create the Snake Game in Rust/WebAssembly and Javascript" in response.text
 
 
 def test_page_route_renders_about_content(client):
     response = client.get("/about")
 
     assert response.status_code == 200
-    assert "This page is rendered by FastAPI" in response.text
+    assert "cycling through music n' emotions" in response.text
+    assert "Message pour le Maître Hérisson" in response.text
 
 
 def test_blog_index_lists_posts(client):
@@ -30,14 +32,15 @@ def test_projects_index_lists_projects(client):
     response = client.get("/projects")
 
     assert response.status_code == 200
-    assert "FastAPI Migration" in response.text
+    assert "devsearch" in response.text
+    assert "period and fertility calculator" in response.text
 
 
 def test_project_detail_route_renders_content(client):
-    response = client.get("/projects/fastapi-migration")
+    response = client.get("/projects/devsearch")
 
     assert response.status_code == 200
-    assert "incremental migration from the Jekyll site to FastAPI" in response.text
+    assert "full-stack course that took me through the entire Python Django framework" in response.text
 
 
 def test_unknown_page_returns_404(client):

@@ -27,7 +27,7 @@ The important part is to keep at it, be consistent, and treat programming as an 
 
 PS: Here is some of that hubris manifesting itself. I did not only solve the [832. Flipping an Image](https://leetcode.com/problems/flipping-an-image/description/) problem on my own (no ChatGPT, no StackOverflow, not even the official Python documentation), but according to Leetcode my solution beat 86% of the other submissions on runtime speed. Yes, the problem is not that difficult, but it would've been impossible for me to tackle without assistance just a year ago. Here follows my solution:
 
-{% highlight python linenos %}
+```python
 
 class Solution:
     def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
@@ -50,5 +50,4 @@ class Solution:
 
         # Return the flipped and inverted image
         return inverted_flipped_image
-        
-{% endhighlight %}
+```

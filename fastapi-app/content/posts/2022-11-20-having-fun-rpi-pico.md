@@ -17,4 +17,4 @@ Since then I completed a few more projects with my Pico, got myself 2 breadboard
 
 I'm full of ideas of how I could use microcontrollers to build an alarm, an automatic feeder for my three cats, signaling lights for my road bike, a big scrolling LCD display - like those seen on Wall Street - to place in my living room, and many more. I find that Andrei's idea of mixing electronics with coding really worked, it added lots of fun to this learning journey and opened my eyes to endless new possibilities. For a device that costs no more than 2-3 coffees I'd say it's worth every penny. Please do yourself a favor and get a Microcontroller Unit, be it a RPi Pico, an Arduino or whatever you feel like. You won't regret it!
 
-<img src="/assets/img/rpi-pico.jpg" alt="RPi Pico" width="100%"/>
+<img src="/static/img/rpi-pico.jpg" alt="RPi Pico"/>

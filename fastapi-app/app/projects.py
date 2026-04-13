@@ -14,18 +14,24 @@ def build_project(file_path: Path) -> Project:
     return Project(
         title=resolve_title(document, slug),
         slug=slug,
-        summary=document.get("summary", ""),
+        summary=document.get("summary") or document.get("description", ""),
         status=document.get("status", ""),
+        category=document.get("category", ""),
+        image=document.get("img", ""),
         html=render_markdown(document.content),
     )
 
 
 def load_project(slug: str) -> Project | None:
-    project_path = PROJECTS_DIR / f"{slug}.md"
-    if not project_path.exists():
+    if not PROJECTS_DIR.exists():
         return None
 
-    return build_project(project_path)
+    for file_path in PROJECTS_DIR.glob("*.md"):
+        project = build_project(file_path)
+        if project.slug == slug:
+            return project
+
+    return None
 
 
 def list_projects() -> list[Project]:

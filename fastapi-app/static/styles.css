@@ -1,11 +1,145 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    padding: 2rem;
+    padding: 0;
     line-height: 1.5;
+    color: #1e1e1e;
+    background: #faf7f2;
 }
 
 main {
     max-width: 48rem;
     margin: 0 auto;
+    padding: 2rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+}
+
+pre {
+    overflow-x: auto;
+    padding: 1rem;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+code {
+    font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+}
+
+.codehilite {
+    margin: 1.5rem 0;
+}
+
+.codehilite pre {
+    background: #1f2430;
+    border-color: #1f2430;
+    color: #d6deeb;
+}
+
+.codehilite .c {
+    color: #637777;
+    font-style: italic;
+}
+
+.codehilite .k,
+.codehilite .kd,
+.codehilite .kn {
+    color: #c792ea;
+}
+
+.codehilite .kt,
+.codehilite .nb {
+    color: #82aaff;
+}
+
+.codehilite .nf,
+.codehilite .fm {
+    color: #82aaff;
+}
+
+.codehilite .s,
+.codehilite .sa,
+.codehilite .sb,
+.codehilite .sc,
+.codehilite .s2 {
+    color: #ecc48d;
+}
+
+.codehilite .mi,
+.codehilite .mf {
+    color: #f78c6c;
+}
+
+.site-shell {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.site-header {
+    border-bottom: 1px solid #e3dacd;
+    background: #fffdf8;
+}
+
+.site-header .site-shell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.site-brand {
+    color: #1e1e1e;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+
+.site-nav,
+.social-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.site-nav a,
+.social-nav a {
+    color: #4c4c4c;
+    text-decoration: none;
+}
+
+.site-nav a:hover,
+.social-nav a:hover {
+    color: #000;
+}
+
+.site-nav .is-active {
+    color: #000;
+    font-weight: 700;
+}
+
+.site-footer {
+    border-top: 1px solid #e3dacd;
+    background: #fffdf8;
+}
+
+.site-footer .site-shell {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.footer-title {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 700;
 }

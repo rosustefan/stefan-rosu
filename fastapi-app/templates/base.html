@@ -7,8 +7,28 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
 </head>
 <body>
+    <header class="site-header">
+        <div class="site-shell">
+            <a class="site-brand" href="/">{{ settings.site_title }}</a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="/" class="{% if request.url.path == '/' %}is-active{% endif %}">Home</a>
+                <a href="/blog" class="{% if request.url.path == '/blog' or request.url.path.startswith('/blog/') %}is-active{% endif %}">Blog</a>
+                <a href="/projects" class="{% if request.url.path == '/projects' or request.url.path.startswith('/projects/') %}is-active{% endif %}">Projects</a>
+            </nav>
+        </div>
+    </header>
     <main>
         {% block content %}{% endblock %}
     </main>
+    <footer class="site-footer">
+        <div class="site-shell">
+            <p class="footer-title">Find me online</p>
+            <nav class="social-nav" aria-label="Social links">
+                <a href="{{ settings.github_url }}" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="{{ settings.linkedin_url }}" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="{{ settings.twitter_url }}" target="_blank" rel="noreferrer">Twitter</a>
+            </nav>
+        </div>
+    </footer>
 </body>
 </html>

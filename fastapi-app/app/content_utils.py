@@ -9,7 +9,7 @@ def load_markdown_document(file_path: Path) -> frontmatter.Post:
 
 
 def render_markdown(content: str) -> str:
-    return markdown(content)
+    return markdown(content, extensions=["fenced_code", "codehilite"])
 
 
 def resolve_slug(document: frontmatter.Post, fallback: str) -> str:

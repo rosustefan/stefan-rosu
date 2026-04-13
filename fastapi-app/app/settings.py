@@ -9,9 +9,14 @@ BASE_DIR = APP_DIR.parent
 
 class Settings(BaseSettings):
     app_name: str = "stefanrosu-ro"
+    site_title: str = "Ștefan Roșu"
     debug: bool = False
     host: str = "127.0.0.1"
     port: int = 8000
+    homepage_news_limit: int = 5
+    github_url: str = "https://github.com/rosustefan"
+    linkedin_url: str = "https://www.linkedin.com/in/%C8%99tefan-andrei-ro%C8%99u-01b996118"
+    twitter_url: str = "https://twitter.com/Stefan1703"
 
     model_config = SettingsConfigDict(
         env_file=".env",

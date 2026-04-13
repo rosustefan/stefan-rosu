@@ -14,11 +14,11 @@ I'm halfway in this class and I gotta say that it's indeed getting alot easier t
 
 Just yesterday, before writting this down, I took a break from the Udemy course and wanted to chill with the stuff that [Rob Mulla](https://www.youtube.com/@robmulla) presented in his video [LIVE CODING: Stocks & Sentiment Analysis](https://www.youtube.com/live/--rsVYmaHwg?feature=share) using the [yfianance](https://pypi.org/project/yfinance/) Python package. Unfortunately it seems that this package is no longer usable, at least not as he was using it 4 months ago. After troubleshooting for half an hour on GitHub and stack**overflow** I decided to let it go and find my own way. Googled for alternative packages and then googled again, but this time for stock market APIs. Found a handy one at [polygon.io](https://polygon.io/). It offers up to 5 free API calls per minute which is plenty for learning purposes. Here's a stock price chart I've produced after reading the documentation and playing with their API and the holy trinity of DS for a couple of hours:
 
-<img src="/assets/img/StockPrice_2023-Mar-04_1803.png" alt="Stock price chart presenting stock price for TSLA, ADBE, AAPL, AMZN and MSFT between 1st of January and 28th of February 2023" width="100%"/>
+<img src="/static/img/StockPrice_2023-Mar-04_1803.png" alt="Stock price chart presenting stock price for TSLA, ADBE, AAPL, AMZN and MSFT between 1st of January and 28th of February 2023"/>
 
 ... and here's the code I wrote for the API calls:
 
-{% highlight python linenos %}
+```python
 
 from polygon import RESTClient
 from config import API_KEY
@@ -55,7 +55,6 @@ def get_ticker_info(ticker, timespan="day", from_="2023-01-01", to="2023-02-28")
     df['date'] = (df['timestamp']/day_divider).values.astype(dtype='datetime64[D]')
 
     return df
-
-{% endhighlight %}
+```
 
 Pretty neat, right? Or was it magic?

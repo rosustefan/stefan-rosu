@@ -30,7 +30,7 @@ As of now, his course has 3.5 million students. I watch the video until the end,
 
 It's still Monday evening and I’m already signed-up & signed-in to [Python for Everybody](https://www.py4e.com). This is where my self-taught-programmer journey begins.
 
-<a href="https://www.py4e.com"><img src="/assets/img/py4e.png" alt="https://www.py4e.com" width="100%"/></a>
+<a href="https://www.py4e.com"><img src="/static/img/py4e.png" alt="https://www.py4e.com"/></a>
 
 Fast-forward 2 months and I complete [Dr. Chuck’s](https://www.dr-chuck.com/) free online Python class. The mystery starts to unravel itself. I can be a coder too. I’m hyped. I’m focused. I have a purpose. I’m unstoppable. I Think I Can!
 
