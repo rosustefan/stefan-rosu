@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<section>
+    <h1>Projects</h1>
+    {% if projects %}
+    <ul>
+        {% for project in projects %}
+        <li>
+            <a href="/projects/{{ project.slug }}">{{ project.title }}</a>
+            {% if project.status %}
+            <span>{{ project.status }}</span>
+            {% endif %}
+            {% if project.summary %}
+            <p>{{ project.summary }}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No projects yet.</p>
+    {% endif %}
+</section>
+{% endblock %}
