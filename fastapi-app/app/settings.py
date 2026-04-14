@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     home_now_title: str = "Now"
     home_now_body: str = (
         "Since August 2025 I have been working as a Python Developer in a real production team, "
-        "building back-end microservices with FastAPI, SQLAlchemy, PostgreSQL, GitLab, ArgoCD, and GCP."
+        "building back-end microservices with FastAPI, SQLAlchemy, PostgreSQL, GitLab, ArgoCD, and GCP. "
         "I am still learning new technologies and frameworks, and I am always looking for new challenges."
     )
     home_story_title: str = "Background"

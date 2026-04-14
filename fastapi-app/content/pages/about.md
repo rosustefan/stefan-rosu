@@ -6,7 +6,7 @@ subtitle: <p><em>cycling through music n' emotions</em></p>
 
 profile:
   align: right
-  image: stefan_rosu_w_coffee.jpg
+  image: stefan_rosu_2026.png
   image_cicular: true # crops the image to make it circular
   address: # Bucharest, Romania
 
