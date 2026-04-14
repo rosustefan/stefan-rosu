@@ -8,6 +8,7 @@ class Page:
     slug: str
     html: str
     subtitle: str = ""
+    profile_image: str = ""
 
 
 @dataclass(slots=True)

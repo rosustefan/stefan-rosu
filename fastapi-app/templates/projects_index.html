@@ -3,22 +3,24 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-<section>
-    <h1>Projects</h1>
+<section class="projects-index">
+    <header class="blog-index-header">
+        <h1>Projects</h1>
+        <p class="blog-intro">A growing collection of projects across learning, experimentation, and practical problem-solving.</p>
+    </header>
     {% if projects %}
-    <ul>
+    <div class="post-list">
         {% for project in projects %}
-        <li>
-            <a href="/projects/{{ project.slug }}">{{ project.title }}</a>
-            {% if project.status %}
-            <span>{{ project.status }}</span>
-            {% endif %}
+        <article class="post-card">
+            <h2 class="post-card-title">
+                <a href="/projects/{{ project.slug }}">{{ project.title }}</a>
+            </h2>
             {% if project.summary %}
-            <p>{{ project.summary }}</p>
+            <p class="post-card-summary">{{ project.summary }}</p>
             {% endif %}
-        </li>
+        </article>
         {% endfor %}
-    </ul>
+    </div>
     {% else %}
     <p>No projects yet.</p>
     {% endif %}

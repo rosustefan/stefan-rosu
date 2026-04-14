@@ -1,6 +1,6 @@
 ---
 layout: page
-title: devsearch
+title: Devsearch
 description: build and deploy a fully functional django website
 img: /static/img/devsearch_complete.png
 importance: 1

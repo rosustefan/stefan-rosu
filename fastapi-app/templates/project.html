@@ -3,14 +3,16 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-<article>
-    <h1>{{ project.title }}</h1>
-    {% if project.status %}
-    <p>{{ project.status }}</p>
-    {% endif %}
-    {% if project.summary %}
-    <p>{{ project.summary }}</p>
-    {% endif %}
+<article class="detail-page">
+    <header class="detail-header">
+        <h1>{{ project.title }}</h1>
+        {% if project.status %}
+        <p class="detail-meta">{{ project.status }}</p>
+        {% endif %}
+        {% if project.summary %}
+        <p class="detail-summary">{{ project.summary }}</p>
+        {% endif %}
+    </header>
     {{ project.html | safe }}
 </article>
 {% endblock %}

@@ -10,7 +10,6 @@
 <body>
     <header class="site-header">
         <div class="site-shell">
-            <a class="site-brand" href="/">{{ settings.site_title }}</a>
             <nav class="site-nav" aria-label="Primary navigation">
                 <a href="/" class="{% if request.url.path == '/' %}is-active{% endif %}">Home</a>
                 <a href="/blog" class="{% if request.url.path == '/blog' or request.url.path.startswith('/blog/') %}is-active{% endif %}">Blog</a>

@@ -3,22 +3,27 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-<section>
-    <h1>Blog</h1>
+<section class="blog-index">
+    <header class="blog-index-header">
+        <h1>{{ settings.blog_title }}</h1>
+        <p class="blog-intro">{{ settings.blog_subtitle }}</p>
+    </header>
     {% if posts %}
-    <ul>
+    <div class="post-list">
         {% for post in posts %}
-        <li>
-            <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
+        <article class="post-card">
             {% if post.date %}
-            <span>{{ post.date }}</span>
+            <p class="post-card-date">{{ post.date.strftime("%b %d, %Y") }}</p>
             {% endif %}
+            <h2 class="post-card-title">
+                <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
+            </h2>
             {% if post.summary %}
-            <p>{{ post.summary }}</p>
+            <p class="post-card-summary">{{ post.summary }}</p>
             {% endif %}
-        </li>
+        </article>
         {% endfor %}
-    </ul>
+    </div>
     {% else %}
     <p>No posts yet.</p>
     {% endif %}

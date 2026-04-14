@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}{{ settings.site_title }}{% endblock %}
+
+{% block content %}
+<section class="home-hero">
+    <div class="home-copy">
+        <h1>{{ settings.site_title }}</h1>
+        <p class="home-tagline">{{ settings.home_tagline }}</p>
+        <section class="home-now-blurb">
+            <h2>{{ settings.home_now_title }}</h2>
+            <p>{{ settings.home_now_body }}</p>
+        </section>
+    </div>
+    {% if page.profile_image %}
+    <aside class="home-profile">
+        <img src="{{ url_for('static', path='/img/' ~ page.profile_image) }}" alt="{{ settings.site_title }}">
+    </aside>
+    {% endif %}
+</section>
+
+<section class="home-lanes">
+    <article class="home-lane">
+        <h2>Blog</h2>
+        {% if recent_posts %}
+        <ul class="home-link-list">
+            {% for post in recent_posts %}
+            <li>
+                <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </article>
+
+    <article class="home-lane">
+        <h2>Projects</h2>
+        {% if featured_projects %}
+        <ul class="home-link-list">
+            {% for project in featured_projects %}
+            <li>
+                <a href="/projects/{{ project.slug }}">{{ project.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </article>
+</section>
+
+<section class="home-story">
+    <h2>{{ settings.home_story_title }}</h2>
+    <div class="home-story-body">
+        {{ story_excerpt | safe }}
+    </div>
+    <p class="home-story-link"><a href="/about">Read the full background</a></p>
+</section>
+{% endblock %}

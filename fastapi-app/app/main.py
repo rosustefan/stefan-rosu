@@ -1,3 +1,5 @@
+import re
+
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -17,6 +19,8 @@ templates = Jinja2Templates(directory=str(settings.templates_dir))
 templates.env.globals["settings"] = settings
 register_error_handlers(app, templates)
 
+PARAGRAPH_PATTERN = re.compile(r"(<p>.*?</p>)", re.DOTALL)
+
 
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon() -> FileResponse:
@@ -29,13 +33,19 @@ async def home(request: Request) -> HTMLResponse:
     if page is None:
         raise HTTPException(status_code=404, detail="Page not found")
 
+    paragraphs = PARAGRAPH_PATTERN.findall(page.html)
+    story_excerpt = "".join(paragraphs[:2]) if paragraphs else page.html
+
     return templates.TemplateResponse(
         request=request,
-        name="page.html",
+        name="home.html",
         context={
-            "title": page.title,
+            "title": settings.site_title,
             "page": page,
+            "recent_posts": list_posts()[: settings.home_writing_limit],
+            "featured_projects": list_projects()[: settings.home_projects_limit],
             "recent_news": list_active_news()[: settings.homepage_news_limit],
+            "story_excerpt": story_excerpt,
         },
     )
 

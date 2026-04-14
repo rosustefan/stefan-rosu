@@ -1,6 +1,6 @@
 ---
 layout: page
-title: period and fertility calculator
+title: Period and Fertility Calculator
 description: calculate the next period date and the fertile days
 img: /static/img/period_and_fertility_calculator_1_2.png
 importance: 1

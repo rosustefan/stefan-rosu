@@ -14,10 +14,12 @@ def load_page(slug: str) -> Page | None:
 
     document = load_markdown_document(page_path)
     resolved_slug = resolve_slug(document, slug)
+    profile = document.get("profile", {}) or {}
 
     return Page(
         title=resolve_title(document, resolved_slug),
         slug=resolved_slug,
         html=render_markdown(document.content),
         subtitle=document.get("subtitle", ""),
+        profile_image=profile.get("image", ""),
     )
