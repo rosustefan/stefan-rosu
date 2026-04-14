@@ -13,9 +13,14 @@ class Settings(BaseSettings):
     debug: bool = False
     host: str = "127.0.0.1"
     port: int = 8000
-    homepage_news_limit: int = 5
-    github_url: str = "https://github.com/rosustefan"
+    homepage_news_limit: int = 3
+    show_email: bool = True
+    show_github: bool = True
+    show_linkedin: bool = True
+    show_twitter: bool = False
     linkedin_url: str = "https://www.linkedin.com/in/%C8%99tefan-andrei-ro%C8%99u-01b996118"
+    github_url: str = "https://github.com/rosustefan"
+    email_address: str = "rosu.stefan@hotmail.com"
     twitter_url: str = "https://twitter.com/Stefan1703"
 
     model_config = SettingsConfigDict(

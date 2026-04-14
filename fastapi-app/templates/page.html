@@ -13,13 +13,13 @@
 {% if request.url.path == '/' and recent_news %}
 <section>
     <h2>Recent News</h2>
-    <ul>
+    <ul class="news-list">
         {% for item in recent_news %}
-        <li>
-            <p><strong>{{ item.date.strftime("%b %d, %Y") }}</strong></p>
-            <div>{{ item.title_html | safe }}</div>
+        <li class="news-item">
+            <span class="news-date">{{ item.date.strftime("%b %d, %Y") }}</span>
+            <span class="news-title">{{ item.title_html | safe }}</span>
             {% if item.body_html %}
-            <div>{{ item.body_html | safe }}</div>
+            <div class="news-body">{{ item.body_html | safe }}</div>
             {% endif %}
         </li>
         {% endfor %}
