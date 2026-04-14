@@ -1,10 +1,8 @@
 ---
-layout: page
 title: Devsearch
 description: build and deploy a fully functional django website
 img: /static/img/devsearch_complete.png
 importance: 1
-category: learn
 ---
 
 My [Devsearch](https://devsearch-srosu.herokuapp.com) project is based on the [Udemy](https://www.udemy.com/) course from [Dennis Ivy](https://www.udemy.com/course/python-django-2021-complete-course/#instructor-1) entitled [Python Django - Complete Course](https://www.udemy.com/course/python-django-2021-complete-course/). It's a full-stack course that took me through the entire Python Django framework, JavaScript, JWT and building a REST API, sending transactional emails and hosting my website on a live server with Heroku while using AWS RDS for the PostgreSQL DB and AWS S3 Bucket for static files storage.

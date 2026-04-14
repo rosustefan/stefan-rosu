@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Data Science & Machine Learning - Part 1
 description: learning the basics and then some
 tags: python kaggle numpy pandas matplotlib
-categories: self-taught-programmer
 ---
 
 What seems magic at first can prove easy later on. Just give it time. March of 2022, that's when the Python instructor presented me with the Python packages [NumPy](https://numpy.org), [pandas](https://pandas.pydata.org/pandas-docs/stable/index.html) and [matplotlib](https://matplotlib.org). You may call it the holy trinity of Data Science (DS) and Data Analysis (DA). Add to that [Anaconda](https://www.anaconda.com) and [Jupyter Notebook](https://jupyter.org) and you've got yourself the industry standard for DS and Machine Learning (ML). Optionally you could replace the last 2 tools I've mentioned with [Kaggle](https://www.kaggle.com) which comes with the tagline "**the world’s largest data science community with powerful tools and resources to help you achieve your data science goals**". [Rob Mulla](https://www.youtube.com/@robmulla) has a very well documented YouTube channel on DS and he uses mostly [Kaggle](https://www.kaggle.com).

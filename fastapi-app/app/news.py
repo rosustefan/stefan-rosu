@@ -1,3 +1,4 @@
+import logging
 import re
 from datetime import datetime
 from pathlib import Path
@@ -7,6 +8,7 @@ from app.models import NewsItem
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 NEWS_DIR = BASE_DIR / "content" / "news"
+logger = logging.getLogger(__name__)
 
 HREF_PATTERN = re.compile(r'href="([^"]+)"')
 BLOG_PATH_PATTERN = re.compile(r"^/?blog/\d{4}/(?P<slug>[^/]+)/?$")
@@ -35,13 +37,17 @@ def _strip_html(value: str) -> str:
 
 
 def _build_news_item(file_path: Path) -> NewsItem:
-    document = load_markdown_document(file_path)
-    raw_date = document.get("date")
-    parsed_date = raw_date if isinstance(raw_date, datetime) else datetime.fromisoformat(str(raw_date))
-    title_html = _normalize_title_links(document.get("title", ""))
-    body_html = render_markdown(document.content) if document.content else ""
-    if _strip_html(body_html) == _strip_html(title_html):
-        body_html = ""
+    try:
+        document = load_markdown_document(file_path)
+        raw_date = document.get("date")
+        parsed_date = raw_date if isinstance(raw_date, datetime) else datetime.fromisoformat(str(raw_date))
+        title_html = _normalize_title_links(document.get("title", ""))
+        body_html = render_markdown(document.content) if document.content else ""
+        if _strip_html(body_html) == _strip_html(title_html):
+            body_html = ""
+    except Exception:
+        logger.exception("Failed to load news item from %s", file_path)
+        raise
 
     return NewsItem(
         title_html=title_html,
@@ -53,6 +59,7 @@ def _build_news_item(file_path: Path) -> NewsItem:
 
 def _list_news() -> list[NewsItem]:
     if not NEWS_DIR.exists():
+        logger.warning("News directory does not exist: %s", NEWS_DIR)
         return []
 
     items = [_build_news_item(file_path) for file_path in NEWS_DIR.glob("*.md")]

@@ -1,10 +1,8 @@
 ---
-layout: page
 title: The Snake Game in Rust/WASM and JS/TS
 description: a fun way to dive deeper into rust and wasm
 img: /static/img/snake_game.png
 importance: 1
-category: learn
 ---
 
 Hello! Hope you're having a great day, and if not, let's make it a bit better! I recently completed a fantastic Udemy course by Filip JERGA: [Rust & WebAssembly with JS (TS) - The Practical Guide](https://www.udemy.com/course/rust-webassembly-with-js-ts-the-practical-guide/learn/lecture/29735156#overview), and I highly recommend it. If you want to dive deep into the beauty of Rust and experience the lightning-fast performance that WASM brings to web apps, this is for you!

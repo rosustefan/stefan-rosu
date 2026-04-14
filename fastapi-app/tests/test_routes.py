@@ -2,8 +2,8 @@ def test_home_page_renders(client):
     response = client.get("/")
 
     assert response.status_code == 200
-    assert "Recent News" in response.text
-    assert "Create the Snake Game in Rust/WebAssembly and Javascript" in response.text
+    assert "Python developer. Self-taught. Still learning." in response.text
+    assert "Background" in response.text
 
 
 def test_page_route_renders_about_content(client):
@@ -32,8 +32,8 @@ def test_projects_index_lists_projects(client):
     response = client.get("/projects")
 
     assert response.status_code == 200
-    assert "devsearch" in response.text
-    assert "period and fertility calculator" in response.text
+    assert "Devsearch" in response.text
+    assert "Period and Fertility Calculator" in response.text
 
 
 def test_project_detail_route_renders_content(client):

@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Having Fun with the Raspberry Pi Pico
 description: learning MicroPython, C and electronics
 tags: python c raspberrypi
-categories: self-taught-programmer
 ---
 
 About a month ago I got curious to know where it all started, at least where modern programming started. I did some digging and one way or the other most roads lead to K&R and 1978. For anyone who's unfamiliar with this, that's the year when Brian W. **Kernighan** and Dennis M. **Ritchie** published [The C Programming Language](https://www.cc4e.com/book/) book.

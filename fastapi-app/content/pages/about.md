@@ -1,6 +1,5 @@
 ---
-layout: about
-title: about
+title: About Me
 permalink: /
 subtitle: <p><em>cycling through music n' emotions</em></p>
 
@@ -15,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 <br>
-Hi! I'm Ștefan and I'm a music lover, a film aficionado, an amateur road cyclist, a beginner/intermediate calisthenics athlete, an occasional computer gamer and an ardent student of life. I love solving problems and strive to always learn. My sweet tooth is `all things tech`!
+Hi! I'm Ștefan Roșu and I'm a music lover, a coffee and film aficionado, an amateur road cyclist, a beginner-intermediate calisthenics athlete, an occasional computer gamer and an ardent student of life. I love solving problems and strive to always learn. My sweet tooth is `all things tech`!
 
 I taught myself Python and I am now working as a Python back-end developer. This site has also come a long way: I migrated from the static [al-folio](https://github.com/alshedivat/al-folio) Jekyll template to my own FastAPI-based website.
 

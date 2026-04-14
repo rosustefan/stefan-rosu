@@ -1,5 +1,4 @@
 ---
-layout: post
 title: <a href="/projects/period_and_fertility_calculator/">Personal Project | Period and Fertility Calendar Calculator</a>
 date: 2023-10-19 17:53:00
 inline: false

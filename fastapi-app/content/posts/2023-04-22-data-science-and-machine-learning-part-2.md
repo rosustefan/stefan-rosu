@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Data Science & Machine Learning - Part 2
 description: crunching numbers in the cloud
 tags: python sklearn tensor-flow kaggle google-colab
-categories: self-taught-programmer
 ---
 
 Last week I've completed the [Complete Machine Learning and Data Science: From Zero to Mastery](https://www.udemy.com/course/complete-machine-learning-and-data-science-zero-to-mastery/) course by [Andrei Neagoie](https://www.udemy.com/user/andrei-neagoie/) and [Daniel Bourke](https://www.udemy.com/user/daniel-bourke-52/) I was telling you about in part 1 of this Data Science (DS) & Machine Learning (ML) blog. I won't lie to you, it was quite the marathon. I went from DS and plotting charts in the first 10 miles straight to [scikit-learn](https://scikit-learn.org/stable/index.html) (sklearn) mid-race and then finished with a sprint through the world of [TensorFlow](https://www.tensorflow.org/) (TF).  sklearn is... I think the official description summarizes it spot on:

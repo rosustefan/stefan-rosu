@@ -1,9 +1,7 @@
 ---
-layout: post
 title: How I Became a Certified Python Programmer
 description: Python Certified Entry-Level Programmer (PCEP)
 tags: python 
-categories: self-taught-programmer
 ---
 
 My summer hard-studying efforts finally paid off with the Python Certified Entry-Level Programmer (PCEP) certification. Here's a sneak peek of how things went!

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: <a href="blog/2022/website-is-live/">My first personal website is live! :sparkles:</a>
 date: 2022-08-16 15:02:00
 inline: false

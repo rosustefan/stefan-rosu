@@ -1,9 +1,7 @@
 ---
-layout: post
 title: My Journey to Becoming a Certified Associate Python Programmer
 description: Certified Associate in Python Programming (PCAP)
 tags: python 
-categories: self-taught-programmer
 ---
 
 I recently obtained my [Certified Associate Python Programmer (PCAP)](https://pythoninstitute.org/pcap) certification, and I couldn’t be more excited about it! The PCAP certification is a professional credential from the Python Institute that measures an individual’s ability to perform intermediate-level coding tasks in the Python language. It shows that the individual is familiar with the more advanced aspects of programming, including the essentials of OOP, the essentials of modules and packages, the exception handling mechanism in OOP, advanced operations on strings, list comprehensions, lambdas, generators, closures, and file processing. PCAP certification gives its holders confidence in their programming skills, helps them stand out in the job market, and gives them a head start on preparing for and advancing to the professional level.

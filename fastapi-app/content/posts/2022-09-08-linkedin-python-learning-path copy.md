@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Becoming a Python Developer
 description: ... and the LinkedIn Learning Path to it
 tags: python
-categories: self-taught-programmer
 ---
 
 Hey, I've just completed the [Python Learning Path](https://www.linkedin.com/learning/paths/become-a-python-developer-8969630) on LinkedIn. It took me about 9 weeks. I could've got it done a lot faster, but it wasn't my sole focus. I'm also learning the [Django](https://dj4e.com) framework at the same time. Furthermore, please note that I've already covered [Dr. Chuck](https://online.dr-chuck.com/index.php)'s [Python for Everybody](https://www.py4e.com) course before engaging in this new self-study.

@@ -1,4 +1,6 @@
 import re
+import logging
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse
@@ -6,20 +8,37 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from app.errors import register_error_handlers
+from app.logging_config import configure_logging
 from app.news import list_active_news
 from app.pages import load_page
 from app.posts import list_posts, load_post
 from app.projects import list_projects, load_project
 from app.settings import settings
 
-app = FastAPI(title=settings.app_name, debug=settings.debug)
+configure_logging(settings.log_level)
+logger = logging.getLogger(__name__)
+
+PARAGRAPH_PATTERN = re.compile(r"(<p>.*?</p>)", re.DOTALL)
+
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    logger.info(
+        "Starting %s on %s:%s with debug=%s",
+        settings.app_name,
+        settings.host,
+        settings.port,
+        settings.debug,
+    )
+    yield
+
+
+app = FastAPI(title=settings.app_name, debug=settings.debug, lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=settings.static_dir), name="static")
 
 templates = Jinja2Templates(directory=str(settings.templates_dir))
 templates.env.globals["settings"] = settings
 register_error_handlers(app, templates)
-
-PARAGRAPH_PATTERN = re.compile(r"(<p>.*?</p>)", re.DOTALL)
 
 
 @app.get("/favicon.ico", include_in_schema=False)
@@ -31,6 +50,7 @@ async def favicon() -> FileResponse:
 async def home(request: Request) -> HTMLResponse:
     page = load_page("about")
     if page is None:
+        logger.warning("Home page content not found: about")
         raise HTTPException(status_code=404, detail="Page not found")
 
     paragraphs = PARAGRAPH_PATTERN.findall(page.html)
@@ -66,6 +86,7 @@ async def blog_index(request: Request) -> HTMLResponse:
 async def blog_post(request: Request, slug: str) -> HTMLResponse:
     post = load_post(slug)
     if post is None:
+        logger.warning("Blog post not found: %s", slug)
         raise HTTPException(status_code=404, detail="Post not found")
 
     return templates.TemplateResponse(
@@ -94,6 +115,7 @@ async def projects_index(request: Request) -> HTMLResponse:
 async def project_detail(request: Request, slug: str) -> HTMLResponse:
     project = load_project(slug)
     if project is None:
+        logger.warning("Project not found: %s", slug)
         raise HTTPException(status_code=404, detail="Project not found")
 
     return templates.TemplateResponse(
@@ -110,6 +132,7 @@ async def project_detail(request: Request, slug: str) -> HTMLResponse:
 async def page(request: Request, slug: str) -> HTMLResponse:
     page = load_page(slug)
     if page is None:
+        logger.warning("Page not found: %s", slug)
         raise HTTPException(status_code=404, detail="Page not found")
 
     return templates.TemplateResponse(

@@ -1,9 +1,7 @@
 ---
-layout: post
 title: My First Personal Website Is Live
 description: everybody needs a personal website
 tags: jekyll html css aws 
-categories: self-taught-programmer
 ---
 
 #### Welcome to My Corner of the World-Wide-Web!

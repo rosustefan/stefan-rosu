@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Coding Is Not for You
 description: how I got back to programming after 20 years
 tags: python django
-categories: self-taught-programmer
 ---
 
 Those words in the title, do they ring a bell for you too? I’m an Informatics and Mathematics high-school graduate. In my teens I fought so hard to get into this domain, until I had my first encounters with the school teachers and the subjects that came along with that. I learnt lots of coding in Pascal, advanced math topics, chemistry, and others. Long story short:  almost didn’t finish high-school, that’s how disappointed I was with the learning experience.

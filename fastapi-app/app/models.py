@@ -18,6 +18,7 @@ class Post:
     html: str
     date: datetime_date | None = None
     summary: str = ""
+    tags: list[str] | None = None
 
 
 @dataclass(slots=True)
@@ -27,7 +28,6 @@ class Project:
     html: str
     summary: str = ""
     status: str = ""
-    category: str = ""
     image: str = ""
 
 

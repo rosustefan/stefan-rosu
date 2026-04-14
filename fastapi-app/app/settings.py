@@ -21,6 +21,7 @@ class Settings(BaseSettings):
     )
     home_story_title: str = "Background"
     debug: bool = False
+    log_level: str = "INFO"
     host: str = "127.0.0.1"
     port: int = 8000
     homepage_news_limit: int = 3

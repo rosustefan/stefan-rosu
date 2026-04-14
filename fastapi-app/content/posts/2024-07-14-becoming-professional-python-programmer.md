@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Becoming a Certified Professional in Python Programming
 description: Certified Professional in Python Programming (PCPP)
 tags: python 
-categories: self-taught-programmer
 ---
 
 It's been a while since I last posted on my blog, but that doesn't mean I've been idle—not in the slightest! Yesterday, I completed the last of the five courses from the Python Institute's Certified Professional in Python Programming (PCPP) curriculum.
